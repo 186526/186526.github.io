@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="author" content="186526">
+<meta name="keywords" content="">
+<meta name="description" content="本博客使用主题mduilw">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/186526/hexo-theme-mduilw@master/source/css/main.min.css">
+<script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+<!--传统手艺不能丢-->
+<script>var bug = 0;</script>
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/186526/hexo-theme-lx/source/images/avatar.jpg">
+<title>186526的博客</title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body class="mdui-theme-primary-blue mdui-theme-accent-green" id="main-body">
+    <header class="mdui-appbar ">
+    <div class="mdui-toolbar mdui-color-theme mdui-appbar-inset">
+        <span mdui-drawer="{target: '#main-drawer', swipe: true}" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white "><i class="mdui-icon material-icons mdui-text-color-white-icon">menu</i></span>
+        <a href="/" class="mdui-typo-title mdui-text-color-white-text">186526的博客</a>
+        <div class="mdui-toolbar-spacer"></div>
+    </div>
+</header>
+    <div class="mdui-drawer mdui-drawer-close"  id="main-drawer" style="padding: 20px">
+    <ul class="mdui-list" mdui-collapse="{accordion: true}">
+        
+        <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="https://cdn.jsdelivr.net/gh/186526/hexo-theme-lx/source/images/avatar.jpg"/></div>
+            <div class="mdui-list-item-content">186526</div>
+        </li>
+        
+        <li class="mdui-list-item mdui-ripple" href="/" >
+            <a href="/" class="mdui-list-item-icon mdui-icon material-icons">home</a>
+            <a href="/" class="mdui-list-item-content">主页</a>
+        </li>
+        
+        <li class="mdui-list-item mdui-ripple" href="javascript:void(0);" onclick="darkmod_use()">
+            <a class="mdui-list-item-icon mdui-icon material-icons">brightness_4</a>
+            <a class="mdui-list-item-content">深色模式</a>
+        </li>
+        
+        
+        <li class="mdui-list-item mdui-ripple" href="/archives/">
+            <a class="mdui-list-item-icon mdui-icon material-icons" href="/archives/">inbox</a>
+            <a class="mdui-list-item-content" href="/archives/">存档</a>
+        </li>
+        
+        
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <a class="mdui-list-item-icon mdui-icon material-icons">account_circle</a>
+                    <div class="mdui-list-item-content">其他平台</div>
+                    <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
+                </div>
+                    
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <a class="mdui-list-item mdui-ripple" href="https://github.com/186526" target="_blank" rel="noopener">Github</a>
+                    </ul>
+                    
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <a class="mdui-list-item mdui-ripple" href="https://space.bilibili.com/386093968" target="_blank" rel="noopener">bilibili</a>
+                    </ul>
+                    
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <a class="mdui-list-item mdui-ripple" href="http://www.coolapk.com/u/848581" target="_blank" rel="noopener">酷安</a>
+                    </ul>
+                    
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <a class="mdui-list-item mdui-ripple" href="mailto:186526@186526.club">mail</a>
+                    </ul>
+                    
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <a class="mdui-list-item mdui-ripple" href="https://dl.186526.club" target="_blank" rel="noopener">文件</a>
+                    </ul>
+                    
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <a class="mdui-list-item mdui-ripple" href="https://sl1.club" target="_blank" rel="noopener">短链</a>
+                    </ul>
+                    
+            </li>
+        
+        
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <a class="mdui-list-item-icon mdui-icon material-icons">bookmark</a>
+                    <div class="mdui-list-item-content">页面</div>
+                    <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
+                </div>
+                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a class="mdui-list-item mdui-ripple" href="/guestbook/">留言板</a>
+                    
+                        <a class="mdui-list-item mdui-ripple" href="/about/">关于我</a>
+                    
+                        <a class="mdui-list-item mdui-ripple" href="/api-list/">API列表</a>
+                    
+                </ul>
+            </li>
+        
+        
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <a class="mdui-list-item-icon mdui-icon material-icons">people</a>
+                    <div class="mdui-list-item-content">友链</div>
+                    <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
+                </div>
+                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                    <div class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-avatar mdui-float-left" style=""><img src="https://cdn.jsdelivr.net/gh/radium-bit/res@latest/avatar.webp"/></div>
+                    <a class="mdui-list-item-content" href="https://radium-bit.github.io/" target="_blank" rel="noopener">Radium-Bit</a>
+                    </div>
+                    
+                    <div class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-avatar mdui-float-left" style=""><img src="https://cdn.jsdelivr.net/gh/qcyblm/qcyblm.github.io@master/favicon.ico"/></div>
+                    <a class="mdui-list-item-content" href="https://qcyblm.me" target="_blank" rel="noopener">Qcyblm</a>
+                    </div>
+                    
+                    <div class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-avatar mdui-float-left" style=""><img src="https://cdn.jsdelivr.net/gh/aipaideer/pic/avatar.png"/></div>
+                    <a class="mdui-list-item-content" href="https://www.jimmyqin.cn" target="_blank" rel="noopener">JimmyQin&#39;s Blog</a>
+                    </div>
+                    
+                </ul>
+            </li>
+        
+    </ul>
+</div>
+    <div class="mdui-container" id="main">
+        <div id="card_of_archive">
+    
+        <div class="mdui-card mdui-hoverable mdui-center" style="margin-top: 3%;max-width:950px;">
+            <div class="mdui-card-header">
+                <img alt="avatar" class="mdui-card-header-avatar"src="https://cdn.jsdelivr.net/gh/186526/hexo-theme-lx/source/images/avatar.jpg"/>
+                <div class="mdui-card-header-title">186526</div>
+                <div class="mdui-card-header-subtitle">No information is the best information</div>
+            </div>
+            <div class="mdui-card-media">
+                <img alt="post-img" src="https://cdn.jsdelivr.net/gh/186526/jsdelivr@master/img/ubuntu-minest.png"/>
+                <div class="mdui-card-media-covered">
+                    <div class="mdui-card-primary">
+                        <div class="mdui-card-primary-title">使用debootstrap构建一个最小化的Ubuntu</div>
+                        <div class="mdui-card-primary-subtitle">2020-06-17</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-card-actions">
+                <a class="mdui-btn mdui-ripple mdui-float-right" href="/2020/06/ubuntu-smallest/">点我阅读<i class="mdui-icon material-icons">navigate_next</i></a>
+            </div>
+        </div>
+    
+        <div class="mdui-card mdui-hoverable mdui-center" style="margin-top: 3%;max-width:950px;">
+            <div class="mdui-card-header">
+                <img alt="avatar" class="mdui-card-header-avatar"src="https://cdn.jsdelivr.net/gh/186526/hexo-theme-lx/source/images/avatar.jpg"/>
+                <div class="mdui-card-header-title">186526</div>
+                <div class="mdui-card-header-subtitle">No information is the best information</div>
+            </div>
+            <div class="mdui-card-media">
+                <img alt="post-img" src="https://cdn.jsdelivr.net/gh/186526/hexo-theme-lx/source/images/post_cover.jpeg"/>
+                <div class="mdui-card-media-covered">
+                    <div class="mdui-card-primary">
+                        <div class="mdui-card-primary-title">让Hexo-Theme-Lx也有深色模式支持</div>
+                        <div class="mdui-card-primary-subtitle">2020-04-21</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-card-actions">
+                <a class="mdui-btn mdui-ripple mdui-float-right" href="/2020/04/lx-with-dark/">点我阅读<i class="mdui-icon material-icons">navigate_next</i></a>
+            </div>
+        </div>
+    
+        <div class="mdui-card mdui-hoverable mdui-center" style="margin-top: 3%;max-width:950px;">
+            <div class="mdui-card-header">
+                <img alt="avatar" class="mdui-card-header-avatar"src="https://cdn.jsdelivr.net/gh/186526/hexo-theme-lx/source/images/avatar.jpg"/>
+                <div class="mdui-card-header-title">186526</div>
+                <div class="mdui-card-header-subtitle">No information is the best information</div>
+            </div>
+            <div class="mdui-card-media">
+                <img alt="post-img" src="https://cdn.jsdelivr.net/gh/186526/hexo-theme-lx/source/images/post_cover.jpeg"/>
+                <div class="mdui-card-media-covered">
+                    <div class="mdui-card-primary">
+                        <div class="mdui-card-primary-title">【你的下一个双系统，何必是多分区。】VHDX简单食用教程</div>
+                        <div class="mdui-card-primary-subtitle">2020-04-16</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-card-actions">
+                <a class="mdui-btn mdui-ripple mdui-float-right" href="/2020/04/VHDX/">点我阅读<i class="mdui-icon material-icons">navigate_next</i></a>
+            </div>
+        </div>
+    
+</div>
+
+        <!--传统手艺不能丢-->
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script> 
+<script>var bug = 0;</script>
+
+<div class="mdui-typo" id="pjax-main" style="text-align: center;margin-top: 10%;margin-end: 2%;">
+<hr/>
+<div class="mdui-typo-caption-opacity">
+  Copyright &copy; 2020.<a href="/">186526的博客</a><br>由 <a href="https://hexo.io" rel="noreferrer" target="_blank">Hexo</a> 强行驱动 | 主题为自己瞎写的 <a href="https://github.com/186526/hexo-theme-mduilw" rel="noreferrer" target="_blank">MDUILW</a> | 使用 <a href="https://cloudflare.com/" target="_blank" rel="noopener">Cloudflare</a> + <del><a href="https://coding.net/" target="_blank" rel="noopener">Coding Pages</a></del> <a href="https://github.com/" target="_blank" rel="noopener">Github Pages</a> 进行托管 <br> <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">京ICP备 备你妈案 </a> <br>本站禁止未经授权的转载 若想转载 请发邮件给<a href="mailto:186526@186526.club">186526@186526.club</a>
+</div>
+</div>
+
+        
+<a class="mdui-fab mdui-ripple mdui-color-green mdui-fab-fixed" href="/"><i href="/" class="material-icons mdui-icon mdui-text-color-black-icon">home</i></a>
+
+    </div>
+</body>
+
+    <script>$(document).pjax('a', '#main' , {fragment:'#main', timeout:8000});
+    
+        $(document).ready(function (){load_valine();add_pic()});
+        $(document).on("pjax:complete", function(){load_valine();add_pic();});
+        </script>
+
+<script src="https://cdn.jsdelivr.net/gh/186526/hexo-theme-mduilw@master/source/js/main.min.js"></script>
+<script>function girlfriends() {console.log("你在想peach");document.write("<div>你在想peach</div>");return false};</script>
+</html>

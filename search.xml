@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>【你的下一个双系统，何必是多分区。】VHDX简单食用教程</title>
+    <url>/2020/04/VHDX/</url>
+    <content><![CDATA[<p>这或许是世界上最简单的Windows 双系统方法了</p>
+<a id="more"></a>
+
+
+
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><blockquote>
+<p>这或许是世界上最简单的Windows 双系统方法了 只要你跟着我的教程走  应该不会出现任何问题</p>
+</blockquote>
+<h2 id="事先准备"><a href="#事先准备" class="headerlink" title="事先准备"></a>事先准备</h2><p>你需要一台Windows8/8.1/10的电脑 ( Windows 7 不支持 VHDX ) 一个系统映像 DISM++ BootICE</p>
+<h2 id="1-0-0-什么是VHD"><a href="#1-0-0-什么是VHD" class="headerlink" title="1.0.0 什么是VHD"></a>1.0.0 什么是VHD</h2><blockquote>
+<p>VHD 是Microsoft Virtual Hard Disk format（<a href="https://baike.baidu.com/item/微软" target="_blank" rel="noopener">微软</a><a href="https://baike.baidu.com/item/虚拟磁盘" target="_blank" rel="noopener">虚拟磁盘</a>文件）的简称。可以由Microsoft <a href="https://baike.baidu.com/item/Virtual%20PC" target="_blank" rel="noopener">Virtual PC</a>2007，<a href="https://baike.baidu.com/item/Windows%20Vista" target="_blank" rel="noopener">Windows Vista</a>，<a href="https://baike.baidu.com/item/Windows%207" target="_blank" rel="noopener">Windows 7</a>/8，<a href="https://baike.baidu.com/item/Hyper-V" target="_blank" rel="noopener">Hyper-V</a>，<a href="https://baike.baidu.com/item/Windows%20Server%202008" target="_blank" rel="noopener">Windows Server 2008</a>R2/2012，Microsoft Virtual Server 2005等创建，<a href="https://baike.baidu.com/item/Virtual%20Box" target="_blank" rel="noopener">Virtual Box</a>，<a href="https://baike.baidu.com/item/VMWare" target="_blank" rel="noopener">VMWare</a>等可以挂载使用。</p>
+</blockquote>
+<blockquote>
+<p>随着虚拟环境的企业工作负荷的增加以及性能要求的提高，虚拟硬盘 (VHD) 格式需要适应这些变化。Windows Server 2012 中的 Hyper-V 引入了一个新版本的 VHD 格式，称为 VHDX，它在设计上可以处理当前以及将来的工作负荷。</p>
+<p>与旧的 VHD 格式相比，VHDX 具有更大的存储容量。它还在电源故障期间提供数据损坏保护并且优化动态磁盘和差异磁盘的结构对齐方式，以防止在新的大型扇区物理磁盘上性能降级。</p>
+</blockquote>
+<p>本教程中使用VHDX进行安装 你也可以使用VHD进行安装</p>
+<h3 id="1-0-1-VHDX安装系统的特点"><a href="#1-0-1-VHDX安装系统的特点" class="headerlink" title="1.0.1 VHDX安装系统的特点"></a>1.0.1 VHDX安装系统的特点</h3><ol>
+<li>整个系统就是一个文件 方便以后迁移系统</li>
+<li>可以使用VHDX的差分备份 还原速度快</li>
+<li>可以让虚拟机和双系统使用同一VHDX启动 (虽说这次做的不是这种)</li>
+</ol>
+<h2 id="2-0-0-开始安装"><a href="#2-0-0-开始安装" class="headerlink" title="2.0.0 开始安装"></a>2.0.0 开始安装</h2><p>终于开始了</p>
+<h3 id="2-1-0-初始化硬盘"><a href="#2-1-0-初始化硬盘" class="headerlink" title="2.1.0 初始化硬盘"></a>2.1.0 初始化硬盘</h3><h4 id="2-1-1-磁盘管理"><a href="#2-1-1-磁盘管理" class="headerlink" title="2.1.1 磁盘管理"></a>2.1.1 磁盘管理</h4><p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/1.jpg" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/2.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/3.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/4.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/5.png" alt="img"></p>
+<ol>
+<li>使用<kbd>Win</kbd>+<kbd>R</kbd>打开运行</li>
+<li>输入mmc</li>
+<li>选择文件</li>
+<li>添加/删除管理单元</li>
+<li>管理本机</li>
+<li>成功</li>
+</ol>
+<h4 id="2-1-2-新建VHDX"><a href="#2-1-2-新建VHDX" class="headerlink" title="2.1.2 新建VHDX"></a>2.1.2 新建VHDX</h4><p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/6.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/7.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/8.png" alt="img"></p>
+<ol>
+<li>选择更多操作 —— 创建VHD</li>
+<li>位置填写放置VHDX文件的位置</li>
+<li>硬盘格式推荐使用VHDX</li>
+<li>类型看情况 动态扩展会降低一部分性能</li>
+</ol>
+<h4 id="2-1-3-给VHDX分区"><a href="#2-1-3-给VHDX分区" class="headerlink" title="2.1.3 给VHDX分区"></a>2.1.3 给VHDX分区</h4><p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/11.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/12.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/13.png" alt="img"></p>
+<p>没啥好说的 分区就完了</p>
+<h3 id="2-2-0-开始安装"><a href="#2-2-0-开始安装" class="headerlink" title="2.2.0 开始安装"></a>2.2.0 开始安装</h3><h4 id="2-2-1-使用DISMpp-释放映像"><a href="#2-2-1-使用DISMpp-释放映像" class="headerlink" title="2.2.1 使用DISMpp 释放映像"></a>2.2.1 使用DISMpp 释放映像</h4><p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr@1.0.9/img/14.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr@1.0.9/img/15.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr@1.0.9/img/16.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr@1.0.9/img/17.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/18.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/19.png" alt="img"></p>
+<p>1.准备Windows映像和Dism++</p>
+<p>2.打开DISM pp 文件 =&gt; 释放映像</p>
+<p>3.选择映像以及VHD(X)映像挂载位置</p>
+<p>4.没啥好说的 直接释放就完了</p>
+<h4 id="2-2-2-使用BootICE-修改BCD引导文件"><a href="#2-2-2-使用BootICE-修改BCD引导文件" class="headerlink" title="2.2.2 使用BootICE 修改BCD引导文件"></a>2.2.2 使用BootICE 修改BCD引导文件</h4><p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/20.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/21.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/22.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/23.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/24.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/25.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/26.png" alt="img"></p>
+<p>1.准备好Bootice</p>
+<p>2.启动Bootice</p>
+<p>3.BCD编辑</p>
+<p>4.智能编辑模式</p>
+<p>5.添加 =&gt; 新建VHD启动项</p>
+<p>6.硬盘选择放置VHD映像的盘符</p>
+<p>   启动分区选择放置VHD映像的分区</p>
+<p>   设备文件选择VHD映像</p>
+<p>​    其他可以保持不变</p>
+<h2 id="Reboot-and-enjoy-it"><a href="#Reboot-and-enjoy-it" class="headerlink" title="Reboot and enjoy it"></a>Reboot and enjoy it</h2>]]></content>
+      <tags>
+        <tag>Windows</tag>
+        <tag>VHDX</tag>
+        <tag>Hyper-V</tag>
+        <tag>多系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>让Hexo-Theme-Lx也有深色模式支持</title>
+    <url>/2020/04/lx-with-dark/</url>
+    <content><![CDATA[<p>想给Hexo-Theme-LX增加深色模式 你可来对地方了</p>
+<a id="more"></a>
+<h3 id="操作有风险-修改需谨慎"><a href="#操作有风险-修改需谨慎" class="headerlink" title="操作有风险 修改需谨慎"></a>操作有风险 修改需谨慎</h3><p>请在修改前做好备份！！！</p>
+<h2 id="究极简单方案-顺手送一个自动更新"><a href="#究极简单方案-顺手送一个自动更新" class="headerlink" title="究极简单方案 (顺手送一个自动更新)"></a>究极简单方案 (顺手送一个自动更新)</h2><p>1.修改theme/lx/_config.yml 将最后面的 <code>css: //cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/css/</code> 修改为<code>css: <a href="https://cdn.jsdelivr.net/gh/186526/hexo-theme-lx/source/css/" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/186526/hexo-theme-lx/source/css/</a></code></p>
+<p>2.修改theme/lx/_config.yml 将Comment中的 <code>cdn: //cdn.bootcss.com/valine/1.3.10/Valine.min.js</code> 修改为<code>cdn: <a href="https://cdn.jsdelivr.net/gh/186526/hexo-theme-lx/source/js/Valine.min.js" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/186526/hexo-theme-lx/source/js/Valine.min.js</a> </code></p>
+<p><del>PS:我不保证你的博客的速度 doge</del></p>
+<p><del>PSPS:现已将js和css移动至cdn.jsdevivr.net</del></p>
+<p>PSPSPS:现已修复无法使用冒号</p>
+<h2 id="普通方法-不包括Valine评论"><a href="#普通方法-不包括Valine评论" class="headerlink" title="普通方法 (不包括Valine评论)"></a>普通方法 (不包括Valine评论)</h2><p>1.修改theme/lx/_config.yml 将最后面的 <code>css: //cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/css/</code> 修改为<code>css: /css/</code></p>
+<p>2.在theme/lx/source/css/main.min.css里添加下列代码</p>
+<p><code>@media (prefers-color-scheme:dark){:root{--background-color:#111;--page-background:#212121;--text-color:#ededed;--color-alpha:#50a8d8}.lx-post{padding:10px;background-color:#111}body{margin:0;background:#111;color:#ededed;font-weight:400;font-size:16px;line-height:1.7}.lx-post .lx-entry{float:left;margin-bottom:15px;width:100%;border:none;border-radius:15px;background:#222;box-shadow:0 .5em 1em -.125em hsla(0,0%,4%,.1),0 0 0 1px hsla(0,0%,4%,.02);border:1px solid #222}.lx-post .lx-entry>div p:last-child{margin-bottom:0;color:#ccc}h2.title{padding-left:8px;border-left:4px solid #b70038;color:#ccc}figure,h1,h2,h3,h4,h5{margin-top:15px;margin-bottom:5px;color:#ccc;font-weight:400}footer{clear:both;padding:20px 60px;font-size:12px;color:#ccc}.lx-post-detail{display:block;margin-bottom:10px;padding-left:10px;border-left:4px solid rgba(247,65,65,.761);color:hsla(0,0%,100%,.5);text-transform:uppercase;letter-spacing:.05em;font-weight:100}.menu .has-sub ul li a{display:block;padding:12px 33px;border-bottom:0;border-bottom:1px dotted #e1e1e1;color:#ccc;background-color:#333;font-size:13px;transition:.1s}h2.title a{color:#ccc}.single .lx-post .lx-entry{border:1px solid #222;box-shadow:none}.lx-entry img,.single .lx-post img{box-sizing:border-box;margin:0 auto 20px;padding:3px;height:auto;max-width:100%;border:none}.v *{background:#222}.v .vwrap .vcard .vimg{border:1px solid #222}.v .vsys{background:#555;color:#eee}.v .vlist,.v .vwrap{border:1px solid #222;border-radius:4px;background:#222}code {overflow-wrap: break-word;word-wrap: break-word;padding: 2px 4px;color: #c7254e;background: #eee;border-radius: 3px;font-size: 14px}}</code></p>
+<p>3.三件套一部到位</p>
+<p>1.实现方法:</p>
+<ul>
+<li>使用最新版本中的 <code> prefers-color-scheme </code> </li>
+<li></li>
+<li>一个个调参数</li>
+<li></li>
+<li>完事</li>
+<li></li>
+</ul>
+<p>2.优势:</p>
+<ul>
+<li>直接可以用系统中的深色选项</li>
+<li></li>
+</ul>
+<p>3.缺点:</p>
+<ul>
+<li>不能对旧版本进行适配</li>
+<li></li>
+<li>不能单独调节</li>
+<li></li>
+<li>对Valine评论尚不完全支持</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>LX</tag>
+        <tag>Hexo-Theme-LX</tag>
+        <tag>Dark Mode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用debootstrap构建一个最小化的Ubuntu</title>
+    <url>/2020/06/ubuntu-smallest/</url>
+    <content><![CDATA[<h2 id="0-0-debootstrap介绍"><a href="#0-0-debootstrap介绍" class="headerlink" title="0.0 debootstrap介绍"></a>0.0 debootstrap介绍</h2><h3 id="0-1-啥是debootstrap"><a href="#0-1-啥是debootstrap" class="headerlink" title="0.1 啥是debootstrap"></a>0.1 啥是debootstrap</h3><p>debootstrap是debian及其附属分支下的一个工具，用来构建一套基本的系统(根文件系统)。生成的目录符合Linux文件系统标准(FHS)，即包含了/boot、/etc、/bin、/usr等等目录，但它比发行版本的Linux体积小很多</p>
+<h3 id="0-2-debootstrap有啥用"><a href="#0-2-debootstrap有啥用" class="headerlink" title="0.2 debootstrap有啥用"></a>0.2 debootstrap有啥用</h3><p>debootstrap可以用来快速 简便的构建一个最小化的debian及其附属分支的最小化rootfs</p>
+<p>我们可以用其构建一个最小化的rootfs (主要是这个相较于 Ubuntu Server版本还是小得多)</p>
+<h3 id="0-3-如何使用debootstrap"><a href="#0-3-如何使用debootstrap" class="headerlink" title="0.3 如何使用debootstrap"></a>0.3 如何使用debootstrap</h3><p>其实 使用debootstrap很简单 他已经被放入到默认源了 我们只需要apt install即可</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install debootstrap</span><br></pre></td></tr></table></figure>
+
+<p>如何使用呢 <del>自己看</del> 详情wiki</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo debootstrap [--arch 架构（可选项）][发行版本] [目录] [映像源（可选项）]</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-0-开始动手构建自己的Ubuntu"><a href="#1-0-开始动手构建自己的Ubuntu" class="headerlink" title="1.0 开始动手构建自己的Ubuntu"></a>1.0 开始动手构建自己的Ubuntu</h2><p>我们这里使用Ubuntu Server 20.04作为Live CD来进行构建</p>
+<h3 id="1-1-进入Shell并安装debootstrap"><a href="#1-1-进入Shell并安装debootstrap" class="headerlink" title="1.1 进入Shell并安装debootstrap"></a>1.1 进入Shell并安装debootstrap</h3><p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr@master/img/Ubuntu%20ISO.png" alt="Ubuntu ISO shell"></p>
+<ol>
+<li><p>点击Help</p>
+</li>
+<li><p>Enter Shell</p>
+</li>
+<li><p>（可选）修改sources.list</p>
+</li>
+<li><p>update sourcelist并安装debootstrap</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt update &amp;&amp; apt install debootstrap</span><br><span class="line">    Ign:1 cdrom://Ubuntu-Server 20.04 LTS _Focal Fossa_ - Release amd64 (20200423) focal InRelease</span><br><span class="line">    Hit:2 cdrom://Ubuntu-Server 20.04 LTS _Focal Fossa_ - Release amd64 (20200423) focal Release</span><br><span class="line">    Get:4 http://mirrors.aliyun.com/ubuntu focal InRelease [265 kB]</span><br><span class="line">    Get:5 http://mirrors.aliyun.com/ubuntu focal-updates InRelease [107 kB]</span><br><span class="line">    Get:6 http://mirrors.aliyun.com/ubuntu focal-backports InRelease [98.3 kB]</span><br><span class="line">    Get:7 http://mirrors.aliyun.com/ubuntu focal-security InRelease [107 kB]</span><br><span class="line">    Get:8 http://mirrors.aliyun.com/ubuntu focal/main amd64 Packages [970 kB]</span><br><span class="line">    Get:9 http://mirrors.aliyun.com/ubuntu focal/main Translation-en [506 kB]</span><br><span class="line">    Get:10 http://mirrors.aliyun.com/ubuntu focal/main amd64 c-n<span class="_">-f</span> Metadata [29.5 kB]</span><br><span class="line">    Get:11 http://mirrors.aliyun.com/ubuntu focal/restricted amd64 Packages [22.0 kB]</span><br><span class="line">    Get:12 http://mirrors.aliyun.com/ubuntu focal/restricted Translation-en [6212 B]</span><br><span class="line">    Get:13 http://mirrors.aliyun.com/ubuntu focal/restricted amd64 c-n<span class="_">-f</span> Metadata [392 B]</span><br><span class="line">    Get:14 http://mirrors.aliyun.com/ubuntu focal/universe amd64 Packages [8628 kB]</span><br><span class="line">    Get:15 http://mirrors.aliyun.com/ubuntu focal/universe Translation-en [5124 kB]</span><br><span class="line">    Get:16 http://mirrors.aliyun.com/ubuntu focal/universe amd64 c-n<span class="_">-f</span> Metadata [265 kB]</span><br><span class="line">    Get:17 http://mirrors.aliyun.com/ubuntu focal/multiverse amd64 Packages [144 kB]</span><br><span class="line">    Get:18 http://mirrors.aliyun.com/ubuntu focal/multiverse Translation-en [104 kB]</span><br><span class="line">    Get:19 http://mirrors.aliyun.com/ubuntu focal/multiverse amd64 c-n<span class="_">-f</span> Metadata [9136 B]</span><br><span class="line">    Get:20 http://mirrors.aliyun.com/ubuntu focal-updates/main amd64 Packages [197 kB]</span><br><span class="line">    Get:21 http://mirrors.aliyun.com/ubuntu focal-updates/main Translation-en [77.7 kB]</span><br><span class="line">    Get:22 http://mirrors.aliyun.com/ubuntu focal-updates/main amd64 c-n<span class="_">-f</span> Metadata [5676 B]</span><br><span class="line">    Get:23 http://mirrors.aliyun.com/ubuntu focal-updates/restricted amd64 Packages [11.0 kB]</span><br><span class="line">    Get:24 http://mirrors.aliyun.com/ubuntu focal-updates/restricted Translation-en [3000 B]</span><br><span class="line">    Get:25 http://mirrors.aliyun.com/ubuntu focal-updates/restricted amd64 c-n<span class="_">-f</span> Metadata [116 B]</span><br><span class="line">    Get:26 http://mirrors.aliyun.com/ubuntu focal-updates/universe amd64 Packages [110 kB]</span><br><span class="line">    Get:27 http://mirrors.aliyun.com/ubuntu focal-updates/universe Translation-en [51.9 kB]</span><br><span class="line">    Get:28 http://mirrors.aliyun.com/ubuntu focal-updates/universe amd64 c-n<span class="_">-f</span> Metadata [4092 B]</span><br><span class="line">    Get:29 http://mirrors.aliyun.com/ubuntu focal-updates/multiverse amd64 Packages [1172 B]</span><br><span class="line">    Get:30 http://mirrors.aliyun.com/ubuntu focal-updates/multiverse Translation-en [540 B]</span><br><span class="line">    Get:31 http://mirrors.aliyun.com/ubuntu focal-updates/multiverse amd64 c-n<span class="_">-f</span> Metadata [116 B]</span><br><span class="line">    Get:32 http://mirrors.aliyun.com/ubuntu focal-backports/main amd64 c-n<span class="_">-f</span> Metadata [112 B]</span><br><span class="line">    Get:33 http://mirrors.aliyun.com/ubuntu focal-backports/restricted amd64 c-n<span class="_">-f</span> Metadata [116 B]</span><br><span class="line">    Get:34 http://mirrors.aliyun.com/ubuntu focal-backports/universe amd64 Packages [2784 B]</span><br><span class="line">    Get:35 http://mirrors.aliyun.com/ubuntu focal-backports/universe Translation-en [1272 B]</span><br><span class="line">    Get:36 http://mirrors.aliyun.com/ubuntu focal-backports/universe amd64 c-n<span class="_">-f</span> Metadata [192 B]</span><br><span class="line">    Get:37 http://mirrors.aliyun.com/ubuntu focal-backports/multiverse amd64 c-n<span class="_">-f</span> Metadata [116 B]</span><br><span class="line">    Get:38 http://mirrors.aliyun.com/ubuntu focal-security/main amd64 Packages [106 kB]</span><br><span class="line">    Get:46 http://mirrors.aliyun.com/ubuntu focal-security/universe amd64 c-n<span class="_">-f</span> Metadata [1612 B]</span><br><span class="line">    Get:47 http://mirrors.aliyun.com/ubuntu focal-security/multiverse amd64 Packages [1172 B]</span><br><span class="line">    Get:48 http://mirrors.aliyun.com/ubuntu focal-security/multiverse Translation-en [540 B]</span><br><span class="line">    Get:49 http://mirrors.aliyun.com/ubuntu focal-security/multiverse amd64 c-n<span class="_">-f</span> Metadata [116 B]</span><br><span class="line">    Fetched 17.1 MB <span class="keyword">in</span> 6s (3096 kB/s)</span><br><span class="line">    Reading package lists... Done</span><br><span class="line">    Building dependency tree</span><br><span class="line">    Reading state information... Done</span><br><span class="line">    65 packages can be upgraded. Run <span class="string">'apt list --upgradable'</span> to see them.</span><br><span class="line">    Reading package lists... Done</span><br><span class="line">    Building dependency tree</span><br><span class="line">    Reading state information... Done</span><br><span class="line">    Suggested packages:</span><br><span class="line">      arch-test squid-deb-proxy-client</span><br><span class="line">    The following NEW packages will be installed:</span><br><span class="line">      debootstrap</span><br><span class="line">    0 upgraded, 1 newly installed, 0 to remove and 65 not upgraded.</span><br><span class="line">    Need to get 39.4 kB of archives.</span><br><span class="line">    After this operation, 299 kB of additional disk space will be used.</span><br><span class="line">    Get:1 http://mirrors.aliyun.com/ubuntu focal-updates/main amd64 debootstrap all 1.0.118ubuntu1.1 [39.4 kB]</span><br><span class="line">    Fetched 39.4 kB <span class="keyword">in</span> 0s (221 kB/s)</span><br><span class="line">    Selecting previously unselected package debootstrap.</span><br><span class="line">    (Reading database ... 33860 files and directories currently installed.)</span><br><span class="line">    Preparing to unpack .../debootstrap_1.0.118ubuntu1.1_all.deb ...</span><br><span class="line">    Unpacking debootstrap (1.0.118ubuntu1.1) ...</span><br><span class="line">    Setting up debootstrap (1.0.118ubuntu1.1) ...</span><br><span class="line">    Processing triggers <span class="keyword">for</span> man-db (2.9.1-1) ...</span><br><span class="line">$ debootstrap</span><br><span class="line">    I: usage: [OPTION]... &lt;suite&gt; &lt;target&gt; [&lt;mirror&gt; [&lt;script&gt;]]</span><br><span class="line">    I: Try `debootstrap --<span class="built_in">help</span><span class="string">' for more information.</span></span><br><span class="line"><span class="string">    E: You must specify a suite and a target.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-给硬盘分区"><a href="#1-2-给硬盘分区" class="headerlink" title="1.2 给硬盘分区"></a>1.2 给硬盘分区</h3><p>这步没啥好说的 用cfdisk进行分区 使用mkfs.ext4来格式化硬盘（请记住如何分区的！！！！（后面编写fstab会涉及到））</p>
+<table>
+<thead>
+<tr>
+<th>/dev路径</th>
+<th>挂载位置</th>
+<th>分区模式</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/dev/sda1</td>
+<td>/boot</td>
+<td>fat32</td>
+<td>负责efi引导</td>
+</tr>
+<tr>
+<td>/dev/sda2</td>
+<td>swap</td>
+<td>swap</td>
+<td>内存交换</td>
+</tr>
+<tr>
+<td>/dev/sda3</td>
+<td>/</td>
+<td>ext4</td>
+<td>根目录</td>
+</tr>
+</tbody></table>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkfs.ext4 /dev/sda3</span><br><span class="line">mke2fs 1.45.5 (07-Jan-2020)</span><br><span class="line">Creating filesystem with 9311995 4k blocks and 2330160 inodes</span><br><span class="line">Filesystem UUID: fbe7f7fe-1997-4ab3-929f-52aa73aa72eb</span><br><span class="line">Superblock backups stored on blocks:</span><br><span class="line">        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,</span><br><span class="line">        4096000, 7962624</span><br><span class="line"></span><br><span class="line">Allocating group tables: <span class="keyword">done</span></span><br><span class="line">Writing inode tables: <span class="keyword">done</span></span><br><span class="line">Creating journal (65536 blocks): <span class="keyword">done</span></span><br><span class="line">Writing superblocks and filesystem accounting information: <span class="keyword">done</span></span><br><span class="line"></span><br><span class="line">$ mkswap /dev/sda2</span><br><span class="line">Setting up swapspace version 1, size = 4 GiB (4294963200 bytes)s</span><br><span class="line">no label, UUID=9fe83e8e-cd78-4a25-8a1e-ab305181c46d</span><br><span class="line">$ swapon /dev/sda2</span><br><span class="line">$ mkfs.vfat /dev/sda1</span><br><span class="line">mkfs.fat 4.1 (2017-01-24)</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-挂载分区并释放rootfs"><a href="#1-3-挂载分区并释放rootfs" class="headerlink" title="1.3 挂载分区并释放rootfs"></a>1.3 挂载分区并释放rootfs</h3><p>这里构建选择最新的Focal X86_64位</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir /target</span><br><span class="line">$ mount /dev/sda3 /target</span><br><span class="line">$ debootstrap focal /target http://mirrors.aliyun.com/ubuntu</span><br><span class="line">I: Retrieving InRelease</span><br><span class="line">I: Checking Release signature</span><br><span class="line">I: Valid Release signature (key id F6ECB3762474EDA9D21B7022871920D1991BC93C)</span><br><span class="line">I: Retrieving Packages</span><br><span class="line">I: Validating Packages</span><br><span class="line">I: Resolving dependencies of required packages...</span><br><span class="line">I: Resolving dependencies of base packages...</span><br><span class="line">I: Checking component main on http://mirrors.aliyun.com/ubuntu...</span><br><span class="line">I: Retrieving adduser 3.118ubuntu2</span><br><span class="line">I: Validating adduser 3.118ubuntu2</span><br><span class="line">I: Retrieving apt 2.0.2</span><br><span class="line">I: Validating apt 2.0.2</span><br><span class="line">…………………………………………………………</span><br><span class="line">I: Configuring console-setup...</span><br><span class="line">I: Configuring kbd...</span><br><span class="line">I: Configuring ubuntu-minimal...</span><br><span class="line">I: Configuring libc-bin...</span><br><span class="line">I: Configuring systemd...</span><br><span class="line">I: Configuring ca-certificates...</span><br><span class="line">I: Base system installed successfully. <span class="comment">##当你看到这句时 说明你的操作没有问题</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4-chroot并进行基本设置"><a href="#1-4-chroot并进行基本设置" class="headerlink" title="1.4 chroot并进行基本设置"></a>1.4 chroot并进行基本设置</h3><h4 id="1-4-1-修改软件源"><a href="#1-4-1-修改软件源" class="headerlink" title="1.4.1 修改软件源"></a>1.4.1 修改软件源</h4><p>默认rootfs中的软件源不完整 我们这里cp一下live cd的软件源</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cp /etc/apt/sources.list /target/etc/apt/sources.list;sed -i 3d /target/etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat &gt;&gt; /target/etc/apt/sources.list &lt;&lt; EOF</span><br><span class="line"><span class="comment"># See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to</span></span><br><span class="line"><span class="comment"># newer versions of the distribution.</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal main restricted</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted</span></span><br><span class="line"><span class="comment">## Major bug fix updates produced after the final release of the</span></span><br><span class="line"><span class="comment">## distribution.</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted</span></span><br><span class="line"><span class="comment">## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu</span></span><br><span class="line"><span class="comment">## team. Also, please note that software in universe WILL NOT receive any</span></span><br><span class="line"><span class="comment">## review or updates from the Ubuntu security team.</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal universe</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal universe</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-updates universe</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates universe</span></span><br><span class="line"><span class="comment">## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu</span></span><br><span class="line"><span class="comment">## team, and may not be under a free licence. Please satisfy yourself as to</span></span><br><span class="line"><span class="comment">## your rights to use the software. Also, please note that software in</span></span><br><span class="line"><span class="comment">## multiverse WILL NOT receive any review or updates from the Ubuntu</span></span><br><span class="line"><span class="comment">## security team.</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal multiverse</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal multiverse</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-updates multiverse</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates multiverse</span></span><br><span class="line"><span class="comment">## N.B. software from this repository may not have been tested as</span></span><br><span class="line"><span class="comment">## extensively as that contained in the main release, although it includes</span></span><br><span class="line"><span class="comment">## newer versions of some applications which may provide useful features.</span></span><br><span class="line"><span class="comment">## Also, please note that software in backports WILL NOT receive any review</span></span><br><span class="line"><span class="comment">## or updates from the Ubuntu security team.</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span></span><br><span class="line"><span class="comment">## Uncomment the following two lines to add software from Canonical's</span></span><br><span class="line"><span class="comment">## 'partner' repository.</span></span><br><span class="line"><span class="comment">## This software is not part of Ubuntu, but is offered by Canonical and the</span></span><br><span class="line"><span class="comment">## respective vendors as a service to Ubuntu users.</span></span><br><span class="line"><span class="comment"># deb http://archive.canonical.com/ubuntu focal partner</span></span><br><span class="line"><span class="comment"># deb-src http://archive.canonical.com/ubuntu focal partner</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-security universe</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal-security universe</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-security multiverse</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal-security multiverse</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-4-2-编写fstab"><a href="#1-4-2-编写fstab" class="headerlink" title="1.4.2 编写fstab"></a>1.4.2 编写fstab</h4><p>这里推荐一下这篇文章 <a href="https://blog.csdn.net/richerg85/article/details/17917129" target="_blank" rel="noopener">linux之fstab文件详解 来自csdn richerg85</a></p>
+<p>fstab主要由这几部分组成</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;file system&gt;   &lt;dir&gt;   &lt;type&gt;  &lt;options&gt;   &lt;dump&gt;  &lt;pass&gt;</span><br><span class="line">（&#x2F;dev下的位置）（挂载位置）（文件系统）（挂载参数）（dump 工具通过它决定何时作备份）（fsck 读取 &lt;pass&gt; 的数值来决定需要检查的文件系统的检查顺序。）</span><br></pre></td></tr></table></figure>
+
+<p>这里以我的fstab文件作为实例</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat &gt;&gt; /target/etc/fstab &lt;&lt; EOF</span><br><span class="line">tmpfs           /tmp    tmpfs   nodev,nosuid            0       0</span><br><span class="line">/dev/sda2       none    swap    defaults                0       0</span><br><span class="line">/dev/sda3       /       ext4    defaults,noatime        0       0</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-4-3-chroot进入系统"><a href="#1-4-3-chroot进入系统" class="headerlink" title="1.4.3 chroot进入系统"></a>1.4.3 chroot进入系统</h4><p>先挂载efi分区</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir /target/boot/efi &amp;&amp; \</span><br><span class="line">mount /dev/sda1 /target/boot/efi</span><br></pre></td></tr></table></figure>
+
+<p>挂载proc等分区</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> /dev /dev/pts /proc /sys /run; <span class="keyword">do</span> sudo mount -B <span class="variable">$i</span> /target<span class="variable">$i</span>; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<p>挂载并安装grub和kernel(这里安装的是虚拟化内核)</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo chroot /target</span><br><span class="line">$ sudo passwd <span class="comment">##配置passwd</span></span><br><span class="line">New password:</span><br><span class="line">Retype new password:</span><br><span class="line">passwd: password updated successfully</span><br><span class="line">$ sudo apt install grub-efi-amd64 linux-virtual -y <span class="comment">##安装grub和kernel</span></span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">The following additional packages will be installed:</span><br><span class="line">  efibootmgr gettext-base grub-common grub-efi-amd64-bin grub-efi-amd64-signed grub2-common libefiboot1 libefivar1</span><br><span class="line">  libfreetype6 libfuse2 libpng16-16 linux-headers-generic linux-headers-virtual os-prober sbsigntool secureboot-db</span><br><span class="line">Suggested packages:</span><br><span class="line">rvice.</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: daemon-reload</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: is-active</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: start</span><br><span class="line">Setting up libefiboot1:amd64 (37-2ubuntu2) ...</span><br><span class="line">Setting up linux-virtual (5.4.0.26.32) ...</span><br><span class="line">Setting up libfreetype6:amd64 (2.10.1-2) ...</span><br><span class="line">Setting up efibootmgr (17-1) ...</span><br><span class="line">Setting up grub-common (2.04-1ubuntu26) ...</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: daemon-reload</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: daemon-reload</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: is-active</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: restart</span><br><span class="line">update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: daemon-reload</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request.</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: daemon-reload</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: is-active</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: restart</span><br><span class="line">Setting up os-prober (1.74ubuntu2) ...</span><br><span class="line">Setting up grub-efi-amd64-bin (2.04-1ubuntu26) ...</span><br><span class="line">Setting up grub2-common (2.04-1ubuntu26) ...</span><br><span class="line">Setting up grub-efi-amd64 (2.04-1ubuntu26) ...</span><br><span class="line">Setting up grub-efi-amd64-signed (1.142+2.04-1ubuntu26) ...</span><br><span class="line">Processing triggers <span class="keyword">for</span> systemd (245.4-4ubuntu3) ...</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: daemon-reload</span><br><span class="line">Processing triggers <span class="keyword">for</span> libc-bin (2.31-0ubuntu9) ...</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-4-4-安装grub2"><a href="#1-4-4-安装grub2" class="headerlink" title="1.4.4 安装grub2"></a>1.4.4 安装grub2</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ grub-install /dev/sda</span><br><span class="line">update-grub Installing <span class="keyword">for</span> x86_64-efi platform.</span><br><span class="line">Installation finished. No error reported.</span><br><span class="line">$ update-grub</span><br><span class="line">Sourcing file `/etc/default/grub<span class="string">'</span></span><br><span class="line"><span class="string">Sourcing file `/etc/default/grub.d/init-select.cfg'</span></span><br><span class="line">Generating grub configuration file ...</span><br><span class="line">Found linux image: /boot/vmlinuz-5.4.0-26-generic</span><br><span class="line">Found initrd image: /boot/initrd.img-5.4.0-26-generic</span><br><span class="line">Adding boot menu entry <span class="keyword">for</span> UEFI Firmware Settings</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-4-5-设置网络"><a href="#1-4-5-设置网络" class="headerlink" title="1.4.5 设置网络"></a>1.4.5 设置网络</h4><p>Ubuntu 18.04及其上的Server版本默认使用systemd-networkd联网</p>
+<p>先使用ip a获取设备</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ip a</span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">    inet 127.0.0.1/8 scope host lo</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">    inet6 ::1/128 scope host</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000 <span class="comment">## ens33就是网络设备</span></span><br><span class="line">    link/ether 00:0c:29:9d:a0:73 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 192.168.57.140/24 brd 192.168.57.255 scope global dynamic ens33</span><br><span class="line">       valid_lft 5433596sec preferred_lft 5433596sec</span><br><span class="line">    inet6 fe80::20c:29ff:fe9d:a073/64 scope link</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br></pre></td></tr></table></figure>
+
+<p>配置所有网卡DHCP联网</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat &gt;&gt; /etc/systemd/network/ens33.network &lt;&lt; EOF</span><br><span class="line">[Match]</span><br><span class="line">Name=*</span><br><span class="line">[Network]</span><br><span class="line">DHCP=both</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-4-6-重启"><a href="#1-4-6-重启" class="headerlink" title="1.4.6 重启"></a>1.4.6 重启</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<p>PS: 第一次开机会有一点点慢（就亿点点）</p>
+<h3 id="1-5-重启并配置网络"><a href="#1-5-重启并配置网络" class="headerlink" title="1.5 重启并配置网络"></a>1.5 重启并配置网络</h3><p>启动systemd-networkd</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ systemctl <span class="built_in">enable</span> --now systemd-networkd</span><br><span class="line">Created symlink /etc/systemd/system/dbus-org.freedesktop.network1.service → /lib/systemd/system/systemd-networkd.service.</span><br><span class="line">Created symlink /etc/systemd/system/multi-user.target.wants/systemd-networkd.service → /lib/systemd/system/systemd-networkd.service.</span><br><span class="line">Created symlink /etc/systemd/system/sockets.target.wants/systemd-networkd.socket → /lib/systemd/system/systemd-networkd.socket.</span><br><span class="line">Created symlink /etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service → /lib/systemd/system/systemd-networkd-wait-online.service.</span><br></pre></td></tr></table></figure>
+
+<p>修改hostname并添加hosts</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hostnamectl <span class="built_in">set</span>-hostname vm-ubuntu-test</span><br><span class="line">$ cat &gt;&gt; /etc/hosts &lt;&lt; EOF</span><br><span class="line">127.0.0.1       vm-ubuntu-test localhost</span><br><span class="line">::1             vm-ubuntu-test localhost ip6-localhost ip6-loopback</span><br><span class="line">ff02::1         ip6-allnodes</span><br><span class="line">ff02::2         ip6-allrouters</span><br></pre></td></tr></table></figure>
+
+<p>最后reboot生效</p>
+<p>享受全新的ubuntu体验吧</p>
+]]></content>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>debootstrap</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+</search>

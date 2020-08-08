@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="author" content="186526">
+<meta name="keywords" content="">
+<meta name="description" content="本博客使用主题mduilw">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/186526/hexo-theme-mduilw@master/source/css/main.min.css">
+<script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+<!--传统手艺不能丢-->
+<script>var bug = 0;</script>
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/186526/hexo-theme-lx/source/images/avatar.jpg">
+<title>186526的博客</title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body class="mdui-theme-primary-blue mdui-theme-accent-green" id="main-body">
+    <header class="mdui-appbar ">
+    <div class="mdui-toolbar mdui-color-theme mdui-appbar-inset">
+        <span mdui-drawer="{target: '#main-drawer', swipe: true}" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white "><i class="mdui-icon material-icons mdui-text-color-white-icon">menu</i></span>
+        <a href="/" class="mdui-typo-title mdui-text-color-white-text">186526的博客</a>
+        <div class="mdui-toolbar-spacer"></div>
+    </div>
+</header>
+    <div class="mdui-drawer mdui-drawer-close"  id="main-drawer" style="padding: 20px">
+    <ul class="mdui-list" mdui-collapse="{accordion: true}">
+        
+        <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="https://cdn.jsdelivr.net/gh/186526/hexo-theme-lx/source/images/avatar.jpg"/></div>
+            <div class="mdui-list-item-content">186526</div>
+        </li>
+        
+        <li class="mdui-list-item mdui-ripple" href="/" >
+            <a href="/" class="mdui-list-item-icon mdui-icon material-icons">home</a>
+            <a href="/" class="mdui-list-item-content">主页</a>
+        </li>
+        
+        <li class="mdui-list-item mdui-ripple" href="javascript:void(0);" onclick="darkmod_use()">
+            <a class="mdui-list-item-icon mdui-icon material-icons">brightness_4</a>
+            <a class="mdui-list-item-content">深色模式</a>
+        </li>
+        
+        
+        <li class="mdui-list-item mdui-ripple" href="/archives/">
+            <a class="mdui-list-item-icon mdui-icon material-icons" href="/archives/">inbox</a>
+            <a class="mdui-list-item-content" href="/archives/">存档</a>
+        </li>
+        
+        
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <a class="mdui-list-item-icon mdui-icon material-icons">account_circle</a>
+                    <div class="mdui-list-item-content">其他平台</div>
+                    <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
+                </div>
+                    
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <a class="mdui-list-item mdui-ripple" href="https://github.com/186526" target="_blank" rel="noopener">Github</a>
+                    </ul>
+                    
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <a class="mdui-list-item mdui-ripple" href="https://space.bilibili.com/386093968" target="_blank" rel="noopener">bilibili</a>
+                    </ul>
+                    
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <a class="mdui-list-item mdui-ripple" href="http://www.coolapk.com/u/848581" target="_blank" rel="noopener">酷安</a>
+                    </ul>
+                    
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <a class="mdui-list-item mdui-ripple" href="mailto:186526@186526.club">mail</a>
+                    </ul>
+                    
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <a class="mdui-list-item mdui-ripple" href="https://dl.186526.club" target="_blank" rel="noopener">文件</a>
+                    </ul>
+                    
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <a class="mdui-list-item mdui-ripple" href="https://sl1.club" target="_blank" rel="noopener">短链</a>
+                    </ul>
+                    
+            </li>
+        
+        
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <a class="mdui-list-item-icon mdui-icon material-icons">bookmark</a>
+                    <div class="mdui-list-item-content">页面</div>
+                    <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
+                </div>
+                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a class="mdui-list-item mdui-ripple" href="/guestbook/">留言板</a>
+                    
+                        <a class="mdui-list-item mdui-ripple" href="/about/">关于我</a>
+                    
+                        <a class="mdui-list-item mdui-ripple" href="/api-list/">API列表</a>
+                    
+                </ul>
+            </li>
+        
+        
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <a class="mdui-list-item-icon mdui-icon material-icons">people</a>
+                    <div class="mdui-list-item-content">友链</div>
+                    <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
+                </div>
+                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                    <div class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-avatar mdui-float-left" style=""><img src="https://cdn.jsdelivr.net/gh/radium-bit/res@latest/avatar.webp"/></div>
+                    <a class="mdui-list-item-content" href="https://radium-bit.github.io/" target="_blank" rel="noopener">Radium-Bit</a>
+                    </div>
+                    
+                    <div class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-avatar mdui-float-left" style=""><img src="https://cdn.jsdelivr.net/gh/qcyblm/qcyblm.github.io@master/favicon.ico"/></div>
+                    <a class="mdui-list-item-content" href="https://qcyblm.me" target="_blank" rel="noopener">Qcyblm</a>
+                    </div>
+                    
+                    <div class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-avatar mdui-float-left" style=""><img src="https://cdn.jsdelivr.net/gh/aipaideer/pic/avatar.png"/></div>
+                    <a class="mdui-list-item-content" href="https://www.jimmyqin.cn" target="_blank" rel="noopener">JimmyQin&#39;s Blog</a>
+                    </div>
+                    
+                </ul>
+            </li>
+        
+    </ul>
+</div>
+    <div class="mdui-container" id="main">
+        <div class="mdui-grid-tile mdui-hoverable" style="margin-top: 3%;">
+    <a href="javascript:;"><img class="mdui-img-fluid mdui-img-rounded"src=https://cdn.jsdelivr.net/gh/186526/jsdelivr@master/img/ubuntu-minest.png/></a>
+    <div class="mdui-grid-tile-actions">
+        <div class="mdui-grid-tile-text">
+            <div class="mdui-grid-tile-title">使用debootstrap构建一个最小化的Ubuntu</div>
+            <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">grid_on</i>186526   2020-06-17</div>
+        </div>
+    </div> 
+</div>
+<div class="post-content mdui-typo">
+<h2 id="0-0-debootstrap介绍"><a href="#0-0-debootstrap介绍" class="headerlink" title="0.0 debootstrap介绍"></a>0.0 debootstrap介绍</h2><h3 id="0-1-啥是debootstrap"><a href="#0-1-啥是debootstrap" class="headerlink" title="0.1 啥是debootstrap"></a>0.1 啥是debootstrap</h3><p>debootstrap是debian及其附属分支下的一个工具，用来构建一套基本的系统(根文件系统)。生成的目录符合Linux文件系统标准(FHS)，即包含了/boot、/etc、/bin、/usr等等目录，但它比发行版本的Linux体积小很多</p>
+<h3 id="0-2-debootstrap有啥用"><a href="#0-2-debootstrap有啥用" class="headerlink" title="0.2 debootstrap有啥用"></a>0.2 debootstrap有啥用</h3><p>debootstrap可以用来快速 简便的构建一个最小化的debian及其附属分支的最小化rootfs</p>
+<p>我们可以用其构建一个最小化的rootfs (主要是这个相较于 Ubuntu Server版本还是小得多)</p>
+<h3 id="0-3-如何使用debootstrap"><a href="#0-3-如何使用debootstrap" class="headerlink" title="0.3 如何使用debootstrap"></a>0.3 如何使用debootstrap</h3><p>其实 使用debootstrap很简单 他已经被放入到默认源了 我们只需要apt install即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install debootstrap</span><br></pre></td></tr></table></figure>
+
+<p>如何使用呢 <del>自己看</del> 详情wiki</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo debootstrap [--arch 架构（可选项）][发行版本] [目录] [映像源（可选项）]</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-0-开始动手构建自己的Ubuntu"><a href="#1-0-开始动手构建自己的Ubuntu" class="headerlink" title="1.0 开始动手构建自己的Ubuntu"></a>1.0 开始动手构建自己的Ubuntu</h2><p>我们这里使用Ubuntu Server 20.04作为Live CD来进行构建</p>
+<h3 id="1-1-进入Shell并安装debootstrap"><a href="#1-1-进入Shell并安装debootstrap" class="headerlink" title="1.1 进入Shell并安装debootstrap"></a>1.1 进入Shell并安装debootstrap</h3><p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr@master/img/Ubuntu%20ISO.png" alt="Ubuntu ISO shell"></p>
+<ol>
+<li><p>点击Help</p>
+</li>
+<li><p>Enter Shell</p>
+</li>
+<li><p>（可选）修改sources.list</p>
+</li>
+<li><p>update sourcelist并安装debootstrap</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt update &amp;&amp; apt install debootstrap</span><br><span class="line">    Ign:1 cdrom://Ubuntu-Server 20.04 LTS _Focal Fossa_ - Release amd64 (20200423) focal InRelease</span><br><span class="line">    Hit:2 cdrom://Ubuntu-Server 20.04 LTS _Focal Fossa_ - Release amd64 (20200423) focal Release</span><br><span class="line">    Get:4 http://mirrors.aliyun.com/ubuntu focal InRelease [265 kB]</span><br><span class="line">    Get:5 http://mirrors.aliyun.com/ubuntu focal-updates InRelease [107 kB]</span><br><span class="line">    Get:6 http://mirrors.aliyun.com/ubuntu focal-backports InRelease [98.3 kB]</span><br><span class="line">    Get:7 http://mirrors.aliyun.com/ubuntu focal-security InRelease [107 kB]</span><br><span class="line">    Get:8 http://mirrors.aliyun.com/ubuntu focal/main amd64 Packages [970 kB]</span><br><span class="line">    Get:9 http://mirrors.aliyun.com/ubuntu focal/main Translation-en [506 kB]</span><br><span class="line">    Get:10 http://mirrors.aliyun.com/ubuntu focal/main amd64 c-n<span class="_">-f</span> Metadata [29.5 kB]</span><br><span class="line">    Get:11 http://mirrors.aliyun.com/ubuntu focal/restricted amd64 Packages [22.0 kB]</span><br><span class="line">    Get:12 http://mirrors.aliyun.com/ubuntu focal/restricted Translation-en [6212 B]</span><br><span class="line">    Get:13 http://mirrors.aliyun.com/ubuntu focal/restricted amd64 c-n<span class="_">-f</span> Metadata [392 B]</span><br><span class="line">    Get:14 http://mirrors.aliyun.com/ubuntu focal/universe amd64 Packages [8628 kB]</span><br><span class="line">    Get:15 http://mirrors.aliyun.com/ubuntu focal/universe Translation-en [5124 kB]</span><br><span class="line">    Get:16 http://mirrors.aliyun.com/ubuntu focal/universe amd64 c-n<span class="_">-f</span> Metadata [265 kB]</span><br><span class="line">    Get:17 http://mirrors.aliyun.com/ubuntu focal/multiverse amd64 Packages [144 kB]</span><br><span class="line">    Get:18 http://mirrors.aliyun.com/ubuntu focal/multiverse Translation-en [104 kB]</span><br><span class="line">    Get:19 http://mirrors.aliyun.com/ubuntu focal/multiverse amd64 c-n<span class="_">-f</span> Metadata [9136 B]</span><br><span class="line">    Get:20 http://mirrors.aliyun.com/ubuntu focal-updates/main amd64 Packages [197 kB]</span><br><span class="line">    Get:21 http://mirrors.aliyun.com/ubuntu focal-updates/main Translation-en [77.7 kB]</span><br><span class="line">    Get:22 http://mirrors.aliyun.com/ubuntu focal-updates/main amd64 c-n<span class="_">-f</span> Metadata [5676 B]</span><br><span class="line">    Get:23 http://mirrors.aliyun.com/ubuntu focal-updates/restricted amd64 Packages [11.0 kB]</span><br><span class="line">    Get:24 http://mirrors.aliyun.com/ubuntu focal-updates/restricted Translation-en [3000 B]</span><br><span class="line">    Get:25 http://mirrors.aliyun.com/ubuntu focal-updates/restricted amd64 c-n<span class="_">-f</span> Metadata [116 B]</span><br><span class="line">    Get:26 http://mirrors.aliyun.com/ubuntu focal-updates/universe amd64 Packages [110 kB]</span><br><span class="line">    Get:27 http://mirrors.aliyun.com/ubuntu focal-updates/universe Translation-en [51.9 kB]</span><br><span class="line">    Get:28 http://mirrors.aliyun.com/ubuntu focal-updates/universe amd64 c-n<span class="_">-f</span> Metadata [4092 B]</span><br><span class="line">    Get:29 http://mirrors.aliyun.com/ubuntu focal-updates/multiverse amd64 Packages [1172 B]</span><br><span class="line">    Get:30 http://mirrors.aliyun.com/ubuntu focal-updates/multiverse Translation-en [540 B]</span><br><span class="line">    Get:31 http://mirrors.aliyun.com/ubuntu focal-updates/multiverse amd64 c-n<span class="_">-f</span> Metadata [116 B]</span><br><span class="line">    Get:32 http://mirrors.aliyun.com/ubuntu focal-backports/main amd64 c-n<span class="_">-f</span> Metadata [112 B]</span><br><span class="line">    Get:33 http://mirrors.aliyun.com/ubuntu focal-backports/restricted amd64 c-n<span class="_">-f</span> Metadata [116 B]</span><br><span class="line">    Get:34 http://mirrors.aliyun.com/ubuntu focal-backports/universe amd64 Packages [2784 B]</span><br><span class="line">    Get:35 http://mirrors.aliyun.com/ubuntu focal-backports/universe Translation-en [1272 B]</span><br><span class="line">    Get:36 http://mirrors.aliyun.com/ubuntu focal-backports/universe amd64 c-n<span class="_">-f</span> Metadata [192 B]</span><br><span class="line">    Get:37 http://mirrors.aliyun.com/ubuntu focal-backports/multiverse amd64 c-n<span class="_">-f</span> Metadata [116 B]</span><br><span class="line">    Get:38 http://mirrors.aliyun.com/ubuntu focal-security/main amd64 Packages [106 kB]</span><br><span class="line">    Get:46 http://mirrors.aliyun.com/ubuntu focal-security/universe amd64 c-n<span class="_">-f</span> Metadata [1612 B]</span><br><span class="line">    Get:47 http://mirrors.aliyun.com/ubuntu focal-security/multiverse amd64 Packages [1172 B]</span><br><span class="line">    Get:48 http://mirrors.aliyun.com/ubuntu focal-security/multiverse Translation-en [540 B]</span><br><span class="line">    Get:49 http://mirrors.aliyun.com/ubuntu focal-security/multiverse amd64 c-n<span class="_">-f</span> Metadata [116 B]</span><br><span class="line">    Fetched 17.1 MB <span class="keyword">in</span> 6s (3096 kB/s)</span><br><span class="line">    Reading package lists... Done</span><br><span class="line">    Building dependency tree</span><br><span class="line">    Reading state information... Done</span><br><span class="line">    65 packages can be upgraded. Run <span class="string">'apt list --upgradable'</span> to see them.</span><br><span class="line">    Reading package lists... Done</span><br><span class="line">    Building dependency tree</span><br><span class="line">    Reading state information... Done</span><br><span class="line">    Suggested packages:</span><br><span class="line">      arch-test squid-deb-proxy-client</span><br><span class="line">    The following NEW packages will be installed:</span><br><span class="line">      debootstrap</span><br><span class="line">    0 upgraded, 1 newly installed, 0 to remove and 65 not upgraded.</span><br><span class="line">    Need to get 39.4 kB of archives.</span><br><span class="line">    After this operation, 299 kB of additional disk space will be used.</span><br><span class="line">    Get:1 http://mirrors.aliyun.com/ubuntu focal-updates/main amd64 debootstrap all 1.0.118ubuntu1.1 [39.4 kB]</span><br><span class="line">    Fetched 39.4 kB <span class="keyword">in</span> 0s (221 kB/s)</span><br><span class="line">    Selecting previously unselected package debootstrap.</span><br><span class="line">    (Reading database ... 33860 files and directories currently installed.)</span><br><span class="line">    Preparing to unpack .../debootstrap_1.0.118ubuntu1.1_all.deb ...</span><br><span class="line">    Unpacking debootstrap (1.0.118ubuntu1.1) ...</span><br><span class="line">    Setting up debootstrap (1.0.118ubuntu1.1) ...</span><br><span class="line">    Processing triggers <span class="keyword">for</span> man-db (2.9.1-1) ...</span><br><span class="line">$ debootstrap</span><br><span class="line">    I: usage: [OPTION]... &lt;suite&gt; &lt;target&gt; [&lt;mirror&gt; [&lt;script&gt;]]</span><br><span class="line">    I: Try `debootstrap --<span class="built_in">help</span><span class="string">' for more information.</span></span><br><span class="line"><span class="string">    E: You must specify a suite and a target.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-给硬盘分区"><a href="#1-2-给硬盘分区" class="headerlink" title="1.2 给硬盘分区"></a>1.2 给硬盘分区</h3><p>这步没啥好说的 用cfdisk进行分区 使用mkfs.ext4来格式化硬盘（请记住如何分区的！！！！（后面编写fstab会涉及到））</p>
+<table>
+<thead>
+<tr>
+<th>/dev路径</th>
+<th>挂载位置</th>
+<th>分区模式</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/dev/sda1</td>
+<td>/boot</td>
+<td>fat32</td>
+<td>负责efi引导</td>
+</tr>
+<tr>
+<td>/dev/sda2</td>
+<td>swap</td>
+<td>swap</td>
+<td>内存交换</td>
+</tr>
+<tr>
+<td>/dev/sda3</td>
+<td>/</td>
+<td>ext4</td>
+<td>根目录</td>
+</tr>
+</tbody></table>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ mkfs.ext4 /dev/sda3</span><br><span class="line">mke2fs 1.45.5 (07-Jan-2020)</span><br><span class="line">Creating filesystem with 9311995 4k blocks and 2330160 inodes</span><br><span class="line">Filesystem UUID: fbe7f7fe-1997-4ab3-929f-52aa73aa72eb</span><br><span class="line">Superblock backups stored on blocks:</span><br><span class="line">        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,</span><br><span class="line">        4096000, 7962624</span><br><span class="line"></span><br><span class="line">Allocating group tables: <span class="keyword">done</span></span><br><span class="line">Writing inode tables: <span class="keyword">done</span></span><br><span class="line">Creating journal (65536 blocks): <span class="keyword">done</span></span><br><span class="line">Writing superblocks and filesystem accounting information: <span class="keyword">done</span></span><br><span class="line"></span><br><span class="line">$ mkswap /dev/sda2</span><br><span class="line">Setting up swapspace version 1, size = 4 GiB (4294963200 bytes)s</span><br><span class="line">no label, UUID=9fe83e8e-cd78-4a25-8a1e-ab305181c46d</span><br><span class="line">$ swapon /dev/sda2</span><br><span class="line">$ mkfs.vfat /dev/sda1</span><br><span class="line">mkfs.fat 4.1 (2017-01-24)</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-挂载分区并释放rootfs"><a href="#1-3-挂载分区并释放rootfs" class="headerlink" title="1.3 挂载分区并释放rootfs"></a>1.3 挂载分区并释放rootfs</h3><p>这里构建选择最新的Focal X86_64位</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir /target</span><br><span class="line">$ mount /dev/sda3 /target</span><br><span class="line">$ debootstrap focal /target http://mirrors.aliyun.com/ubuntu</span><br><span class="line">I: Retrieving InRelease</span><br><span class="line">I: Checking Release signature</span><br><span class="line">I: Valid Release signature (key id F6ECB3762474EDA9D21B7022871920D1991BC93C)</span><br><span class="line">I: Retrieving Packages</span><br><span class="line">I: Validating Packages</span><br><span class="line">I: Resolving dependencies of required packages...</span><br><span class="line">I: Resolving dependencies of base packages...</span><br><span class="line">I: Checking component main on http://mirrors.aliyun.com/ubuntu...</span><br><span class="line">I: Retrieving adduser 3.118ubuntu2</span><br><span class="line">I: Validating adduser 3.118ubuntu2</span><br><span class="line">I: Retrieving apt 2.0.2</span><br><span class="line">I: Validating apt 2.0.2</span><br><span class="line">…………………………………………………………</span><br><span class="line">I: Configuring console-setup...</span><br><span class="line">I: Configuring kbd...</span><br><span class="line">I: Configuring ubuntu-minimal...</span><br><span class="line">I: Configuring libc-bin...</span><br><span class="line">I: Configuring systemd...</span><br><span class="line">I: Configuring ca-certificates...</span><br><span class="line">I: Base system installed successfully. <span class="comment">##当你看到这句时 说明你的操作没有问题</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4-chroot并进行基本设置"><a href="#1-4-chroot并进行基本设置" class="headerlink" title="1.4 chroot并进行基本设置"></a>1.4 chroot并进行基本设置</h3><h4 id="1-4-1-修改软件源"><a href="#1-4-1-修改软件源" class="headerlink" title="1.4.1 修改软件源"></a>1.4.1 修改软件源</h4><p>默认rootfs中的软件源不完整 我们这里cp一下live cd的软件源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /etc/apt/sources.list /target/etc/apt/sources.list;sed -i 3d /target/etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">$ cat &gt;&gt; /target/etc/apt/sources.list &lt;&lt; EOF</span><br><span class="line"><span class="comment"># See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to</span></span><br><span class="line"><span class="comment"># newer versions of the distribution.</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal main restricted</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted</span></span><br><span class="line"><span class="comment">## Major bug fix updates produced after the final release of the</span></span><br><span class="line"><span class="comment">## distribution.</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted</span></span><br><span class="line"><span class="comment">## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu</span></span><br><span class="line"><span class="comment">## team. Also, please note that software in universe WILL NOT receive any</span></span><br><span class="line"><span class="comment">## review or updates from the Ubuntu security team.</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal universe</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal universe</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-updates universe</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates universe</span></span><br><span class="line"><span class="comment">## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu</span></span><br><span class="line"><span class="comment">## team, and may not be under a free licence. Please satisfy yourself as to</span></span><br><span class="line"><span class="comment">## your rights to use the software. Also, please note that software in</span></span><br><span class="line"><span class="comment">## multiverse WILL NOT receive any review or updates from the Ubuntu</span></span><br><span class="line"><span class="comment">## security team.</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal multiverse</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal multiverse</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-updates multiverse</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates multiverse</span></span><br><span class="line"><span class="comment">## N.B. software from this repository may not have been tested as</span></span><br><span class="line"><span class="comment">## extensively as that contained in the main release, although it includes</span></span><br><span class="line"><span class="comment">## newer versions of some applications which may provide useful features.</span></span><br><span class="line"><span class="comment">## Also, please note that software in backports WILL NOT receive any review</span></span><br><span class="line"><span class="comment">## or updates from the Ubuntu security team.</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span></span><br><span class="line"><span class="comment">## Uncomment the following two lines to add software from Canonical's</span></span><br><span class="line"><span class="comment">## 'partner' repository.</span></span><br><span class="line"><span class="comment">## This software is not part of Ubuntu, but is offered by Canonical and the</span></span><br><span class="line"><span class="comment">## respective vendors as a service to Ubuntu users.</span></span><br><span class="line"><span class="comment"># deb http://archive.canonical.com/ubuntu focal partner</span></span><br><span class="line"><span class="comment"># deb-src http://archive.canonical.com/ubuntu focal partner</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-security universe</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal-security universe</span></span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-security multiverse</span><br><span class="line"><span class="comment"># deb-src http://mirrors.aliyun.com/ubuntu/ focal-security multiverse</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-4-2-编写fstab"><a href="#1-4-2-编写fstab" class="headerlink" title="1.4.2 编写fstab"></a>1.4.2 编写fstab</h4><p>这里推荐一下这篇文章 <a href="https://blog.csdn.net/richerg85/article/details/17917129" target="_blank" rel="noopener">linux之fstab文件详解 来自csdn richerg85</a></p>
+<p>fstab主要由这几部分组成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;file system&gt;   &lt;dir&gt;   &lt;type&gt;  &lt;options&gt;   &lt;dump&gt;  &lt;pass&gt;</span><br><span class="line">（&#x2F;dev下的位置）（挂载位置）（文件系统）（挂载参数）（dump 工具通过它决定何时作备份）（fsck 读取 &lt;pass&gt; 的数值来决定需要检查的文件系统的检查顺序。）</span><br></pre></td></tr></table></figure>
+
+<p>这里以我的fstab文件作为实例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ cat &gt;&gt; /target/etc/fstab &lt;&lt; EOF</span><br><span class="line">tmpfs           /tmp    tmpfs   nodev,nosuid            0       0</span><br><span class="line">/dev/sda2       none    swap    defaults                0       0</span><br><span class="line">/dev/sda3       /       ext4    defaults,noatime        0       0</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-4-3-chroot进入系统"><a href="#1-4-3-chroot进入系统" class="headerlink" title="1.4.3 chroot进入系统"></a>1.4.3 chroot进入系统</h4><p>先挂载efi分区</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /target/boot/efi &amp;&amp; \</span><br><span class="line">mount /dev/sda1 /target/boot/efi</span><br></pre></td></tr></table></figure>
+
+<p>挂载proc等分区</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> /dev /dev/pts /proc /sys /run; <span class="keyword">do</span> sudo mount -B <span class="variable">$i</span> /target<span class="variable">$i</span>; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<p>挂载并安装grub和kernel(这里安装的是虚拟化内核)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">$ sudo chroot /target</span><br><span class="line">$ sudo passwd <span class="comment">##配置passwd</span></span><br><span class="line">New password:</span><br><span class="line">Retype new password:</span><br><span class="line">passwd: password updated successfully</span><br><span class="line">$ sudo apt install grub-efi-amd64 linux-virtual -y <span class="comment">##安装grub和kernel</span></span><br><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree</span><br><span class="line">Reading state information... Done</span><br><span class="line">The following additional packages will be installed:</span><br><span class="line">  efibootmgr gettext-base grub-common grub-efi-amd64-bin grub-efi-amd64-signed grub2-common libefiboot1 libefivar1</span><br><span class="line">  libfreetype6 libfuse2 libpng16-16 linux-headers-generic linux-headers-virtual os-prober sbsigntool secureboot-db</span><br><span class="line">Suggested packages:</span><br><span class="line">rvice.</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: daemon-reload</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: is-active</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: start</span><br><span class="line">Setting up libefiboot1:amd64 (37-2ubuntu2) ...</span><br><span class="line">Setting up linux-virtual (5.4.0.26.32) ...</span><br><span class="line">Setting up libfreetype6:amd64 (2.10.1-2) ...</span><br><span class="line">Setting up efibootmgr (17-1) ...</span><br><span class="line">Setting up grub-common (2.04-1ubuntu26) ...</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: daemon-reload</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: daemon-reload</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: is-active</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: restart</span><br><span class="line">update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: daemon-reload</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request.</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: daemon-reload</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: is-active</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: restart</span><br><span class="line">Setting up os-prober (1.74ubuntu2) ...</span><br><span class="line">Setting up grub-efi-amd64-bin (2.04-1ubuntu26) ...</span><br><span class="line">Setting up grub2-common (2.04-1ubuntu26) ...</span><br><span class="line">Setting up grub-efi-amd64 (2.04-1ubuntu26) ...</span><br><span class="line">Setting up grub-efi-amd64-signed (1.142+2.04-1ubuntu26) ...</span><br><span class="line">Processing triggers <span class="keyword">for</span> systemd (245.4-4ubuntu3) ...</span><br><span class="line">Running <span class="keyword">in</span> chroot, ignoring request: daemon-reload</span><br><span class="line">Processing triggers <span class="keyword">for</span> libc-bin (2.31-0ubuntu9) ...</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-4-4-安装grub2"><a href="#1-4-4-安装grub2" class="headerlink" title="1.4.4 安装grub2"></a>1.4.4 安装grub2</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ grub-install /dev/sda</span><br><span class="line">update-grub Installing <span class="keyword">for</span> x86_64-efi platform.</span><br><span class="line">Installation finished. No error reported.</span><br><span class="line">$ update-grub</span><br><span class="line">Sourcing file `/etc/default/grub<span class="string">'</span></span><br><span class="line"><span class="string">Sourcing file `/etc/default/grub.d/init-select.cfg'</span></span><br><span class="line">Generating grub configuration file ...</span><br><span class="line">Found linux image: /boot/vmlinuz-5.4.0-26-generic</span><br><span class="line">Found initrd image: /boot/initrd.img-5.4.0-26-generic</span><br><span class="line">Adding boot menu entry <span class="keyword">for</span> UEFI Firmware Settings</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-4-5-设置网络"><a href="#1-4-5-设置网络" class="headerlink" title="1.4.5 设置网络"></a>1.4.5 设置网络</h4><p>Ubuntu 18.04及其上的Server版本默认使用systemd-networkd联网</p>
+<p>先使用ip a获取设备</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ ip a</span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">    inet 127.0.0.1/8 scope host lo</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">    inet6 ::1/128 scope host</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000 <span class="comment">## ens33就是网络设备</span></span><br><span class="line">    link/ether 00:0c:29:9d:a0:73 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 192.168.57.140/24 brd 192.168.57.255 scope global dynamic ens33</span><br><span class="line">       valid_lft 5433596sec preferred_lft 5433596sec</span><br><span class="line">    inet6 fe80::20c:29ff:fe9d:a073/64 scope link</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br></pre></td></tr></table></figure>
+
+<p>配置所有网卡DHCP联网</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ cat &gt;&gt; /etc/systemd/network/ens33.network &lt;&lt; EOF</span><br><span class="line">[Match]</span><br><span class="line">Name=*</span><br><span class="line">[Network]</span><br><span class="line">DHCP=both</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-4-6-重启"><a href="#1-4-6-重启" class="headerlink" title="1.4.6 重启"></a>1.4.6 重启</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">exit</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<p>PS: 第一次开机会有一点点慢（就亿点点）</p>
+<h3 id="1-5-重启并配置网络"><a href="#1-5-重启并配置网络" class="headerlink" title="1.5 重启并配置网络"></a>1.5 重启并配置网络</h3><p>启动systemd-networkd</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl <span class="built_in">enable</span> --now systemd-networkd</span><br><span class="line">Created symlink /etc/systemd/system/dbus-org.freedesktop.network1.service → /lib/systemd/system/systemd-networkd.service.</span><br><span class="line">Created symlink /etc/systemd/system/multi-user.target.wants/systemd-networkd.service → /lib/systemd/system/systemd-networkd.service.</span><br><span class="line">Created symlink /etc/systemd/system/sockets.target.wants/systemd-networkd.socket → /lib/systemd/system/systemd-networkd.socket.</span><br><span class="line">Created symlink /etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service → /lib/systemd/system/systemd-networkd-wait-online.service.</span><br></pre></td></tr></table></figure>
+
+<p>修改hostname并添加hosts</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ hostnamectl <span class="built_in">set</span>-hostname vm-ubuntu-test</span><br><span class="line">$ cat &gt;&gt; /etc/hosts &lt;&lt; EOF</span><br><span class="line">127.0.0.1       vm-ubuntu-test localhost</span><br><span class="line">::1             vm-ubuntu-test localhost ip6-localhost ip6-loopback</span><br><span class="line">ff02::1         ip6-allnodes</span><br><span class="line">ff02::2         ip6-allrouters</span><br></pre></td></tr></table></figure>
+
+<p>最后reboot生效</p>
+<p>享受全新的ubuntu体验吧</p>
+
+
+<div id="comments" style="margin-top: 20%;">
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  load_valine = function () {
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: true,
+    appId: 'u6RSYBGKK1qBIkHBdIEmMWSW-gzGzoHsz',
+    appKey: 'pFcWuNMWM08I81COGKAl6SKJ',
+    placeholder: 'Say something.',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    lang: 'zh-cn' || 'zh-cn',
+    path: window.location.pathname // **请确保必须写该属性
+  });};
+</script>
+
+</div>
+
+</div>
+
+        <!--传统手艺不能丢-->
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script> 
+<script>var bug = 0;</script>
+
+<div class="mdui-typo" id="pjax-main" style="text-align: center;margin-top: 10%;margin-end: 2%;">
+<hr/>
+<div class="mdui-typo-caption-opacity">
+  Copyright &copy; 2020.<a href="/">186526的博客</a><br>由 <a href="https://hexo.io" rel="noreferrer" target="_blank">Hexo</a> 强行驱动 | 主题为自己瞎写的 <a href="https://github.com/186526/hexo-theme-mduilw" rel="noreferrer" target="_blank">MDUILW</a> | 使用 <a href="https://cloudflare.com/" target="_blank" rel="noopener">Cloudflare</a> + <del><a href="https://coding.net/" target="_blank" rel="noopener">Coding Pages</a></del> <a href="https://github.com/" target="_blank" rel="noopener">Github Pages</a> 进行托管 <br> <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">京ICP备 备你妈案 </a> <br>本站禁止未经授权的转载 若想转载 请发邮件给<a href="mailto:186526@186526.club">186526@186526.club</a>
+</div>
+</div>
+
+        
+<a class="mdui-fab mdui-ripple mdui-color-green mdui-fab-fixed" href="/"><i href="/" class="material-icons mdui-icon mdui-text-color-black-icon">home</i></a>
+
+    </div>
+</body>
+
+    <script>$(document).pjax('a', '#main' , {fragment:'#main', timeout:8000});
+    
+        $(document).ready(function (){load_valine();add_pic()});
+        $(document).on("pjax:complete", function(){load_valine();add_pic();});
+        </script>
+
+<script src="https://cdn.jsdelivr.net/gh/186526/hexo-theme-mduilw@master/source/js/main.min.js"></script>
+<script>function girlfriends() {console.log("你在想peach");document.write("<div>你在想peach</div>");return false};</script>
+</html>

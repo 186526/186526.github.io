@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="author" content="186526">
+<meta name="keywords" content="">
+<meta name="description" content="本博客使用主题mduilw">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/186526/hexo-theme-mduilw@master/source/css/main.min.css">
+<script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+<!--传统手艺不能丢-->
+<script>var bug = 0;</script>
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/186526/hexo-theme-lx/source/images/avatar.jpg">
+<title>186526的博客</title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body class="mdui-theme-primary-blue mdui-theme-accent-green" id="main-body">
+    <header class="mdui-appbar ">
+    <div class="mdui-toolbar mdui-color-theme mdui-appbar-inset">
+        <span mdui-drawer="{target: '#main-drawer', swipe: true}" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white "><i class="mdui-icon material-icons mdui-text-color-white-icon">menu</i></span>
+        <a href="/" class="mdui-typo-title mdui-text-color-white-text">186526的博客</a>
+        <div class="mdui-toolbar-spacer"></div>
+    </div>
+</header>
+    <div class="mdui-drawer mdui-drawer-close"  id="main-drawer" style="padding: 20px">
+    <ul class="mdui-list" mdui-collapse="{accordion: true}">
+        
+        <li class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-avatar"><img src="https://cdn.jsdelivr.net/gh/186526/hexo-theme-lx/source/images/avatar.jpg"/></div>
+            <div class="mdui-list-item-content">186526</div>
+        </li>
+        
+        <li class="mdui-list-item mdui-ripple" href="/" >
+            <a href="/" class="mdui-list-item-icon mdui-icon material-icons">home</a>
+            <a href="/" class="mdui-list-item-content">主页</a>
+        </li>
+        
+        <li class="mdui-list-item mdui-ripple" href="javascript:void(0);" onclick="darkmod_use()">
+            <a class="mdui-list-item-icon mdui-icon material-icons">brightness_4</a>
+            <a class="mdui-list-item-content">深色模式</a>
+        </li>
+        
+        
+        <li class="mdui-list-item mdui-ripple" href="/archives/">
+            <a class="mdui-list-item-icon mdui-icon material-icons" href="/archives/">inbox</a>
+            <a class="mdui-list-item-content" href="/archives/">存档</a>
+        </li>
+        
+        
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <a class="mdui-list-item-icon mdui-icon material-icons">account_circle</a>
+                    <div class="mdui-list-item-content">其他平台</div>
+                    <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
+                </div>
+                    
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <a class="mdui-list-item mdui-ripple" href="https://github.com/186526" target="_blank" rel="noopener">Github</a>
+                    </ul>
+                    
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <a class="mdui-list-item mdui-ripple" href="https://space.bilibili.com/386093968" target="_blank" rel="noopener">bilibili</a>
+                    </ul>
+                    
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <a class="mdui-list-item mdui-ripple" href="http://www.coolapk.com/u/848581" target="_blank" rel="noopener">酷安</a>
+                    </ul>
+                    
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <a class="mdui-list-item mdui-ripple" href="mailto:186526@186526.club">mail</a>
+                    </ul>
+                    
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <a class="mdui-list-item mdui-ripple" href="https://dl.186526.club" target="_blank" rel="noopener">文件</a>
+                    </ul>
+                    
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                        <a class="mdui-list-item mdui-ripple" href="https://sl1.club" target="_blank" rel="noopener">短链</a>
+                    </ul>
+                    
+            </li>
+        
+        
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <a class="mdui-list-item-icon mdui-icon material-icons">bookmark</a>
+                    <div class="mdui-list-item-content">页面</div>
+                    <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
+                </div>
+                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a class="mdui-list-item mdui-ripple" href="/guestbook/">留言板</a>
+                    
+                        <a class="mdui-list-item mdui-ripple" href="/about/">关于我</a>
+                    
+                        <a class="mdui-list-item mdui-ripple" href="/api-list/">API列表</a>
+                    
+                </ul>
+            </li>
+        
+        
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <a class="mdui-list-item-icon mdui-icon material-icons">people</a>
+                    <div class="mdui-list-item-content">友链</div>
+                    <div class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</div>
+                </div>
+                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                    <div class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-avatar mdui-float-left" style=""><img src="https://cdn.jsdelivr.net/gh/radium-bit/res@latest/avatar.webp"/></div>
+                    <a class="mdui-list-item-content" href="https://radium-bit.github.io/" target="_blank" rel="noopener">Radium-Bit</a>
+                    </div>
+                    
+                    <div class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-avatar mdui-float-left" style=""><img src="https://cdn.jsdelivr.net/gh/qcyblm/qcyblm.github.io@master/favicon.ico"/></div>
+                    <a class="mdui-list-item-content" href="https://qcyblm.me" target="_blank" rel="noopener">Qcyblm</a>
+                    </div>
+                    
+                    <div class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-avatar mdui-float-left" style=""><img src="https://cdn.jsdelivr.net/gh/aipaideer/pic/avatar.png"/></div>
+                    <a class="mdui-list-item-content" href="https://www.jimmyqin.cn" target="_blank" rel="noopener">JimmyQin&#39;s Blog</a>
+                    </div>
+                    
+                </ul>
+            </li>
+        
+    </ul>
+</div>
+    <div class="mdui-container" id="main">
+        <div class="mdui-grid-tile mdui-hoverable" style="margin-top: 3%;">
+    <a href="javascript:;"><img class="mdui-img-fluid mdui-img-rounded"src=https://cdn.jsdelivr.net/gh/186526/hexo-theme-lx/source/images/post_cover.jpeg/></a>
+    <div class="mdui-grid-tile-actions">
+        <div class="mdui-grid-tile-text">
+            <div class="mdui-grid-tile-title">【你的下一个双系统，何必是多分区。】VHDX简单食用教程</div>
+            <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">grid_on</i>186526   2020-04-16</div>
+        </div>
+    </div> 
+</div>
+<div class="post-content mdui-typo">
+<p>这或许是世界上最简单的Windows 双系统方法了</p>
+<a id="more"></a>
+
+
+
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><blockquote>
+<p>这或许是世界上最简单的Windows 双系统方法了 只要你跟着我的教程走  应该不会出现任何问题</p>
+</blockquote>
+<h2 id="事先准备"><a href="#事先准备" class="headerlink" title="事先准备"></a>事先准备</h2><p>你需要一台Windows8/8.1/10的电脑 ( Windows 7 不支持 VHDX ) 一个系统映像 DISM++ BootICE</p>
+<h2 id="1-0-0-什么是VHD"><a href="#1-0-0-什么是VHD" class="headerlink" title="1.0.0 什么是VHD"></a>1.0.0 什么是VHD</h2><blockquote>
+<p>VHD 是Microsoft Virtual Hard Disk format（<a href="https://baike.baidu.com/item/微软" target="_blank" rel="noopener">微软</a><a href="https://baike.baidu.com/item/虚拟磁盘" target="_blank" rel="noopener">虚拟磁盘</a>文件）的简称。可以由Microsoft <a href="https://baike.baidu.com/item/Virtual%20PC" target="_blank" rel="noopener">Virtual PC</a>2007，<a href="https://baike.baidu.com/item/Windows%20Vista" target="_blank" rel="noopener">Windows Vista</a>，<a href="https://baike.baidu.com/item/Windows%207" target="_blank" rel="noopener">Windows 7</a>/8，<a href="https://baike.baidu.com/item/Hyper-V" target="_blank" rel="noopener">Hyper-V</a>，<a href="https://baike.baidu.com/item/Windows%20Server%202008" target="_blank" rel="noopener">Windows Server 2008</a>R2/2012，Microsoft Virtual Server 2005等创建，<a href="https://baike.baidu.com/item/Virtual%20Box" target="_blank" rel="noopener">Virtual Box</a>，<a href="https://baike.baidu.com/item/VMWare" target="_blank" rel="noopener">VMWare</a>等可以挂载使用。</p>
+</blockquote>
+<blockquote>
+<p>随着虚拟环境的企业工作负荷的增加以及性能要求的提高，虚拟硬盘 (VHD) 格式需要适应这些变化。Windows Server 2012 中的 Hyper-V 引入了一个新版本的 VHD 格式，称为 VHDX，它在设计上可以处理当前以及将来的工作负荷。</p>
+<p>与旧的 VHD 格式相比，VHDX 具有更大的存储容量。它还在电源故障期间提供数据损坏保护并且优化动态磁盘和差异磁盘的结构对齐方式，以防止在新的大型扇区物理磁盘上性能降级。</p>
+</blockquote>
+<p>本教程中使用VHDX进行安装 你也可以使用VHD进行安装</p>
+<h3 id="1-0-1-VHDX安装系统的特点"><a href="#1-0-1-VHDX安装系统的特点" class="headerlink" title="1.0.1 VHDX安装系统的特点"></a>1.0.1 VHDX安装系统的特点</h3><ol>
+<li>整个系统就是一个文件 方便以后迁移系统</li>
+<li>可以使用VHDX的差分备份 还原速度快</li>
+<li>可以让虚拟机和双系统使用同一VHDX启动 (虽说这次做的不是这种)</li>
+</ol>
+<h2 id="2-0-0-开始安装"><a href="#2-0-0-开始安装" class="headerlink" title="2.0.0 开始安装"></a>2.0.0 开始安装</h2><p>终于开始了</p>
+<h3 id="2-1-0-初始化硬盘"><a href="#2-1-0-初始化硬盘" class="headerlink" title="2.1.0 初始化硬盘"></a>2.1.0 初始化硬盘</h3><h4 id="2-1-1-磁盘管理"><a href="#2-1-1-磁盘管理" class="headerlink" title="2.1.1 磁盘管理"></a>2.1.1 磁盘管理</h4><p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/1.jpg" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/2.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/3.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/4.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/5.png" alt="img"></p>
+<ol>
+<li>使用<kbd>Win</kbd>+<kbd>R</kbd>打开运行</li>
+<li>输入mmc</li>
+<li>选择文件</li>
+<li>添加/删除管理单元</li>
+<li>管理本机</li>
+<li>成功</li>
+</ol>
+<h4 id="2-1-2-新建VHDX"><a href="#2-1-2-新建VHDX" class="headerlink" title="2.1.2 新建VHDX"></a>2.1.2 新建VHDX</h4><p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/6.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/7.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/8.png" alt="img"></p>
+<ol>
+<li>选择更多操作 —— 创建VHD</li>
+<li>位置填写放置VHDX文件的位置</li>
+<li>硬盘格式推荐使用VHDX</li>
+<li>类型看情况 动态扩展会降低一部分性能</li>
+</ol>
+<h4 id="2-1-3-给VHDX分区"><a href="#2-1-3-给VHDX分区" class="headerlink" title="2.1.3 给VHDX分区"></a>2.1.3 给VHDX分区</h4><p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/11.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/12.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/13.png" alt="img"></p>
+<p>没啥好说的 分区就完了</p>
+<h3 id="2-2-0-开始安装"><a href="#2-2-0-开始安装" class="headerlink" title="2.2.0 开始安装"></a>2.2.0 开始安装</h3><h4 id="2-2-1-使用DISMpp-释放映像"><a href="#2-2-1-使用DISMpp-释放映像" class="headerlink" title="2.2.1 使用DISMpp 释放映像"></a>2.2.1 使用DISMpp 释放映像</h4><p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr@1.0.9/img/14.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr@1.0.9/img/15.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr@1.0.9/img/16.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr@1.0.9/img/17.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/18.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/19.png" alt="img"></p>
+<p>1.准备Windows映像和Dism++</p>
+<p>2.打开DISM pp 文件 =&gt; 释放映像</p>
+<p>3.选择映像以及VHD(X)映像挂载位置</p>
+<p>4.没啥好说的 直接释放就完了</p>
+<h4 id="2-2-2-使用BootICE-修改BCD引导文件"><a href="#2-2-2-使用BootICE-修改BCD引导文件" class="headerlink" title="2.2.2 使用BootICE 修改BCD引导文件"></a>2.2.2 使用BootICE 修改BCD引导文件</h4><p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/20.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/21.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/22.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/23.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/24.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/25.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/186526/jsdelivr/img/26.png" alt="img"></p>
+<p>1.准备好Bootice</p>
+<p>2.启动Bootice</p>
+<p>3.BCD编辑</p>
+<p>4.智能编辑模式</p>
+<p>5.添加 =&gt; 新建VHD启动项</p>
+<p>6.硬盘选择放置VHD映像的盘符</p>
+<p>   启动分区选择放置VHD映像的分区</p>
+<p>   设备文件选择VHD映像</p>
+<p>​    其他可以保持不变</p>
+<h2 id="Reboot-and-enjoy-it"><a href="#Reboot-and-enjoy-it" class="headerlink" title="Reboot and enjoy it"></a>Reboot and enjoy it</h2>
+
+<div id="comments" style="margin-top: 20%;">
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  load_valine = function () {
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: true,
+    appId: 'u6RSYBGKK1qBIkHBdIEmMWSW-gzGzoHsz',
+    appKey: 'pFcWuNMWM08I81COGKAl6SKJ',
+    placeholder: 'Say something.',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    lang: 'zh-cn' || 'zh-cn',
+    path: window.location.pathname // **请确保必须写该属性
+  });};
+</script>
+
+</div>
+
+</div>
+
+        <!--传统手艺不能丢-->
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script> 
+<script>var bug = 0;</script>
+
+<div class="mdui-typo" id="pjax-main" style="text-align: center;margin-top: 10%;margin-end: 2%;">
+<hr/>
+<div class="mdui-typo-caption-opacity">
+  Copyright &copy; 2020.<a href="/">186526的博客</a><br>由 <a href="https://hexo.io" rel="noreferrer" target="_blank">Hexo</a> 强行驱动 | 主题为自己瞎写的 <a href="https://github.com/186526/hexo-theme-mduilw" rel="noreferrer" target="_blank">MDUILW</a> | 使用 <a href="https://cloudflare.com/" target="_blank" rel="noopener">Cloudflare</a> + <del><a href="https://coding.net/" target="_blank" rel="noopener">Coding Pages</a></del> <a href="https://github.com/" target="_blank" rel="noopener">Github Pages</a> 进行托管 <br> <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">京ICP备 备你妈案 </a> <br>本站禁止未经授权的转载 若想转载 请发邮件给<a href="mailto:186526@186526.club">186526@186526.club</a>
+</div>
+</div>
+
+        
+<a class="mdui-fab mdui-ripple mdui-color-green mdui-fab-fixed" href="/"><i href="/" class="material-icons mdui-icon mdui-text-color-black-icon">home</i></a>
+
+    </div>
+</body>
+
+    <script>$(document).pjax('a', '#main' , {fragment:'#main', timeout:8000});
+    
+        $(document).ready(function (){load_valine();add_pic()});
+        $(document).on("pjax:complete", function(){load_valine();add_pic();});
+        </script>
+
+<script src="https://cdn.jsdelivr.net/gh/186526/hexo-theme-mduilw@master/source/js/main.min.js"></script>
+<script>function girlfriends() {console.log("你在想peach");document.write("<div>你在想peach</div>");return false};</script>
+</html>
